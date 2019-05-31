@@ -39,7 +39,8 @@ def retrieve_file(name, sock):
     sock.close()
 
 def main():
-    host = socket.gethostname()
+    # host = socket.gethostname()
+    host = ''
     port = 5000
 
     s = socket.socket()
