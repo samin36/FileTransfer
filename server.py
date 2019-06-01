@@ -20,7 +20,6 @@ def retrieve_file(name, sock):
     filename = possible_files(sock)
     sock.send(filename.encode('utf-8'))
     if os.path.isfile(filename):
-        sock.send(str(config).encode('utf-8'))
         msg = f"EXISTS: {str(os.path.getsize(filename))}"
         sock.send(msg.encode('utf-8'))
         user_resp = sock.recv(config['bytes'])
